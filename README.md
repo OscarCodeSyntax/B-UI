@@ -27,11 +27,17 @@ npm run pretty
 **Documentation used**: 
 
 > https://spring.io/guides/tutorials/rest/
+>
 > https://spring.io/guides/tutorials/react-and-spring-data-rest/
+> 
 > https://medium.com/free-code-camp/learn-mongodb-a4ce205e7739 - Bottom Half after db set up
+> 
 > https://www.mongodb.com/docs/mongodb-shell/
+> 
 > https://spring.io/guides/gs/accessing-mongodb-data-rest/
+> 
 > https://medium.com/@samuelcatalano/connecting-spring-boot-to-mongodb-a-step-by-step-guide-b9f2fd9e872d
+> 
 > https://www.baeldung.com/spring-data-mongodb-tutorial
 
 **Key Mongo Documentation**
