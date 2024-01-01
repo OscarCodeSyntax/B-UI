@@ -28,7 +28,6 @@ npm run pretty
 
 > https://spring.io/guides/tutorials/rest/
 > https://spring.io/guides/tutorials/react-and-spring-data-rest/
-
 > https://medium.com/free-code-camp/learn-mongodb-a4ce205e7739 - Bottom Half after db set up
 > https://www.mongodb.com/docs/mongodb-shell/
 > https://spring.io/guides/gs/accessing-mongodb-data-rest/
