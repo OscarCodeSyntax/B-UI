@@ -44,7 +44,7 @@ npm run pretty
 >  =https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo.repositories
 
 
-**Interesting **
+**Interesting**
 > https://www.baeldung.com/spring-boot-yaml-vs-properties
 
 **Login Template Used**
