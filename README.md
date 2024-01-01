@@ -41,7 +41,7 @@ npm run pretty
 > https://www.baeldung.com/spring-data-mongodb-tutorial
 
 **Key Mongo Documentation**
->  =https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo.repositories
+>  https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo.repositories
 
 
 **Interesting**
