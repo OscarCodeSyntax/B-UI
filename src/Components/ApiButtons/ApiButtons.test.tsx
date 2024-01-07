@@ -29,23 +29,23 @@ describe("Api Buttons ", () => {
     expect(screen.getByText("Find All")).toBeTruthy();
   });
 
-  it("display value should change after each click", async () => {
+  it("display value should change after each click", () => {
     render(<ApiButtons />);
     expect(screen.getByText("Null")).toBeTruthy();
 
     fireEvent.click(screen.queryByText("Create"));
-    expect(await screen.findByText('create reached : "create"')).toBeTruthy();
+    expect(screen.findByText('create reached : "create"')).toBeTruthy();
 
     fireEvent.click(screen.queryByText("Delete By Id"));
-    expect(await screen.findByText("Deleted")).toBeTruthy();
+    expect(screen.findByText("Deleted")).toBeTruthy();
 
     fireEvent.click(screen.queryByText("Find All"));
-    expect(await screen.findByText("Found All")).toBeTruthy();
+    expect(screen.findByText("Found All")).toBeTruthy();
 
     fireEvent.click(screen.queryByText("Find By Id"));
-    expect(await screen.findByText("get by Id reached : 1")).toBeTruthy();
+    expect(screen.findByText("get by Id reached : 1")).toBeTruthy();
 
     fireEvent.click(screen.queryByText("Update"));
-    expect(await screen.findByText("Updated")).toBeTruthy();
+    expect(screen.findByText("Updated")).toBeTruthy();
   });
 });
