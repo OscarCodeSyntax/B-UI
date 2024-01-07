@@ -1,43 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./../../App.css";
 import { FormControl, FormLabel, TextField } from "@mui/material";
- 
+import { SignInUserType } from "../../Resources/Types/UserLoginTypes";
+import UserLoginQueries from "../../Resources/DataService/UserLoginQueries";
+
 function LoginForm() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
- 
-    const onSubmit = (data:any) => {
-        const userData = JSON.parse(localStorage.getItem(data.email));
-        if (userData) { // getItem can return actual value or null
-            if (userData.password === data.password) {
-                console.log(userData.name + " You Are Successfully Logged In");
-            } else {
-                console.log("Email or Password is not matching with our record");
-            }
-        } else {
-            console.log("Email or Password is not matching with our record");
-        }
+  const [username, setUsername] = useState("");
+
+  const [password, setPassword] = useState("");
+
+  function validateForm() {
+    return username.length > 0 && password.length > 0;
+  }
+
+  async function handleSubmit(event: any) {
+    event.preventDefault();
+
+    let loginInformation: SignInUserType = {
+      username: username,
+      password: password,
     };
-    
-    return (
-        <div className="padding-20">
-            <h1>Login</h1>
-            <form className="App" onSubmit={handleSubmit(onSubmit)}>
-            <FormControl className="padding-10">
-            <FormLabel>Email</FormLabel>
-                <TextField type="email" {...register("email", { required: true })} name='username'/>
-                {errors.email && <span style={{ color: "red" }}>
-                    *Email* is mandatory </span>}
-                    <FormLabel>Password</FormLabel>
-                <TextField type="password" {...register("password")} name='password'/>
-                <TextField type={"submit"}  defaultValue="Outlined" color="secondary"  value="submit"  name="submit"/>
-                </FormControl>
-            </form>
-        </div>
-    );
+    // send the username and password to the API
+    const response = await UserLoginQueries.signInUser(loginInformation);
+
+    // store the user in localStorage
+    localStorage.setItem("username", response.username);
+    localStorage.setItem("id", response.id);
+    console.log(response.id);
+    console.log(response.username);
+    console.log(response.headers);
+  }
+
+  return (
+    <div className="padding-20">
+      <h1>Login</h1>
+      <form className="App" onSubmit={handleSubmit}>
+        <FormControl className="padding-10">
+          <FormLabel>Username</FormLabel>
+          <TextField
+            type="username"
+            onChange={(e) => setUsername(e.target.value)}
+            name="username"
+            value={username}
+          />
+          <FormLabel>Password</FormLabel>
+          <TextField
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            value={password}
+          />
+          <TextField
+            type={"submit"}
+            defaultValue="Outlined"
+            color="secondary"
+            value="submit"
+            name="submit"
+            disabled={!validateForm()}
+          />
+        </FormControl>
+      </form>
+    </div>
+  );
 }
+
 export default LoginForm;

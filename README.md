@@ -10,6 +10,11 @@ npm run start
 npm run pretty
 ```
 
+**To test the ui:**
+```
+npm run test
+```
+
 **To clear and reset node conflicts and dependencies:**
 ```
  rm node_modules
@@ -51,10 +56,19 @@ npm run pretty
 > https://www.bezkoder.com/spring-boot-mongodb-login-example/
 > https://github.com/bezkoder/spring-boot-login-mongodb
 > https://www.baeldung.com/spring-security-logout
+> https://www.bezkoder.com/react-login-example-jwt-hooks/#Login_Page
 
 **Standard Documents**
 > https://github.com/stickfigure/blog/wiki/How-to-%28and-how-not-to%29-design-REST-APIs?utm_source=tldrwebdev
 
 
 
+**JWT front end handling**
+> https://dev.to/sanjayttg/jwt-authentication-in-react-with-react-router-1d03
 
+**HTTPOnly cookies - sent by springsecurity - cant see the cookie on client-side**
+https://keeplearning.dev/nodejs-jwt-authentication-with-http-only-cookie-5d8a966ac059
+
+
+**JWT handler**
+https://medium.com/@thecodebean/implementing-jwt-authentication-in-a-spring-boot-application-5a7a94d785d1

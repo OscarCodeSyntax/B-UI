@@ -2,26 +2,27 @@ import * as React from "react";
 import BasicQueries from "../../Resources/DataService/BasicQueries";
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import "../../App.css";
+// import "./App.css";
+import "./../../App.css";
 
 const ApiButtons = () => {
-  const [screenValue, setscreenValue] = useState<String>("Null");
+  const [screenValue, setScreenValue] = useState<string>("Null");
 
-  const deleteOnClick = () => {
-    if (BasicQueries.deleteById(2)) {
-      setscreenValue("Deleted");
+  const deleteOnClick = async () => {
+    if (await BasicQueries.deleteById(2)) {
+      setScreenValue("Deleted");
     }
   };
 
-  const findAllOnClick = () => {
-    if (BasicQueries.findAll()) {
-      setscreenValue("Found All");
+  const findAllOnClick = async () => {
+    if (await BasicQueries.findAll()) {
+      setScreenValue("Found All");
     }
   };
 
-  const updateOnClick = () => {
-    if (BasicQueries.update(2, "updated")) {
-      setscreenValue("Updated");
+  const updateOnClick = async () => {
+    if (await BasicQueries.update(2, "updated")) {
+      setScreenValue("Updated");
     }
   };
 
@@ -33,7 +34,7 @@ const ApiButtons = () => {
           <Button
             variant="outlined"
             onClick={(e: any) =>
-              BasicQueries.create("create").then(setscreenValue)
+              BasicQueries.create("create").then(setScreenValue)
             }
             title="Create"
             value="Create"
@@ -69,7 +70,7 @@ const ApiButtons = () => {
           <Button
             variant="outlined"
             onClick={(e: any) => {
-              BasicQueries.findById(1).then(setscreenValue);
+              BasicQueries.findById(1).then(setScreenValue);
             }}
             title="Find By Id"
             value="Find By Id"

@@ -9,6 +9,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["mocha", "jest", "enzyme"]
+    "types": ["mocha", "jest"],
+    "lib": ["es2022", "dom"]
   }
 }

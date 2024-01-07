@@ -1,54 +1,79 @@
 import FormControl from "@mui/material/FormControl";
-import React from "react";
+import React, { useState } from "react";
 import "../../App.css";
 import { FormLabel, Input, TextField } from "@mui/material";
-import { useForm } from "react-hook-form";
+import { SignUpUserType } from "../../Resources/Types/UserLoginTypes";
+import UserLoginQueries from "../../Resources/DataService/UserLoginQueries";
 
-// <input type="text" />
-// <input type="email" />
-// <input type="password" />
-// <input type={"submit"}
 const RegistrationForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  
-  const onSubmit = (data : any) => {
-    localStorage.setItem(data.email, JSON.stringify({ 
-        name: data.name, password: data.password 
-    }));
-    console.log(JSON.parse(localStorage.getItem(data.email)));
+  const [username, setUsername] = useState("");
+
+  const [password, setPassword] = useState("");
+
+  const [email, setEmail] = useState("");
+
+  function validateForm() {
+    return username.length > 0 && password.length > 0 && email.length;
+  }
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    let loginInformation: SignUpUserType = {
+      username: username,
+      email: email,
+      roles: [],
+      password: password,
+    };
+    // send the username and password to the API
+    const response = await UserLoginQueries.signUpUser(loginInformation);
+    // store the user in localStorage
+    localStorage.setItem("username", response.username);
+    localStorage.setItem("id", response.id);
+    console.log(response.id);
+    console.log(response.username);
+    console.log(response.headers);
   };
 
   return (
-    
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit}>
       <h1>Registration</h1>
-        <FormControl >
+      <FormControl>
         <FormLabel>User Name</FormLabel>
-          <TextField type="text" color="secondary" {...register("name")} />
-          <FormLabel>Email</FormLabel>
-          <TextField
-            type="email"
-            color="secondary"
-            {...register("email", { required: true })}
-          />
-          {errors.email && (
-            <span style={{ color: "red" }}>*Email* is mandatory </span>
-          )}
-            <FormLabel>Password</FormLabel>
-          <TextField
-            type="password"
-            defaultValue="Outlined"
-            color="secondary"
-            {...register("password")}
-          />
-          <TextField type="submit" defaultValue="Outlined" color="secondary" />
-        </FormControl>
-      </form>
-    
+        <TextField
+          type="username"
+          color="secondary"
+          onChange={(e) => setUsername(e.target.value)}
+          name="username"
+          value={username}
+        />
+        <FormLabel>Email</FormLabel>
+        <TextField
+          type="email"
+          color="secondary"
+          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          value={email}
+        />
+        <FormLabel>Password</FormLabel>
+        <TextField
+          type="password"
+          defaultValue="Outlined"
+          color="secondary"
+          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          value={password}
+        />
+        <TextField
+          type={"submit"}
+          defaultValue="Outlined"
+          color="secondary"
+          value="submit"
+          name="submit"
+          disabled={!validateForm()}
+        />
+      </FormControl>
+    </form>
   );
 };
 
