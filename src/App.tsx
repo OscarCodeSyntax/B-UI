@@ -8,7 +8,6 @@ const App = () => {
   return (
     <div className="text-center padding-20">
       <h1>API TEMPLATE</h1>
-      <ApiButtons />
       <RegistrationForm />
       <LoginForm />
     </div>
