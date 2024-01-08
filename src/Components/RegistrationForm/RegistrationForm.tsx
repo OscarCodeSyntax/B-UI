@@ -1,7 +1,7 @@
 import FormControl from "@mui/material/FormControl";
 import React, { useState } from "react";
 import "../../App.css";
-import { FormLabel, Input, TextField } from "@mui/material";
+import { FormLabel, TextField } from "@mui/material";
 import { SignUpUserType } from "../../Resources/Types/UserLoginTypes";
 import UserLoginQueries from "../../Resources/DataService/UserLoginQueries";
 
