@@ -64,6 +64,7 @@ const RegistrationForm = () => {
           name="password"
           value={password}
         />
+      <br></br>
         <TextField
           type={"submit"}
           defaultValue="Outlined"

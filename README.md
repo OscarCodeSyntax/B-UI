@@ -72,3 +72,20 @@ https://keeplearning.dev/nodejs-jwt-authentication-with-http-only-cookie-5d8a966
 
 **JWT handler**
 https://medium.com/@thecodebean/implementing-jwt-authentication-in-a-spring-boot-application-5a7a94d785d1
+
+**React Router**
+https://blog.logrocket.com/react-router-v6-guide/
+
+https://reactrouter.com/en/main/start/tutorial
+
+
+**Global State** - will use ReactContext due to how small our application is :
+
+https://dev.to/gabrieldneto/react-authentication-with-context-api-and-react-router-v6-typescript-4kn8
+
+
+
+https://dev.to/sanjayttg/jwt-authentication-in-react-with-react-router-1d03  --- brush up on this
+
+**Cookie handling**
+https://www.npmjs.com/package/js-cookie
