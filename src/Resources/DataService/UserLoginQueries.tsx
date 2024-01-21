@@ -5,10 +5,10 @@ const apiClient = axios.create({
   baseURL: "http://localhost:8080/api",
   headers: {
     "Content-type": "application/json",
-    "Access-Control-Allow-Origin": "http://localhost:3000",
     "Access-Control-Allow-Headers":
-      "Origin, X-Requested-With, Content-Type, Accept",
+      "Origin, X-Requested-With, Content-Type, Accept, Set-Cookie",
   },
+  withCredentials: true
 });
 
 const signUpUser = async (signUpUserInfo: SignUpUserType) => {
