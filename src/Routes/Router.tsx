@@ -1,7 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
-import LoginForm from "../Components/LoginForm/LoginForm";
 import React from "react";
+import LoginForm from "../Components/LoginForm/LoginForm";
 import RouterError from "./RouterError";
+import { createBrowserRouter } from "react-router-dom";
 
 const Router = createBrowserRouter([
     {

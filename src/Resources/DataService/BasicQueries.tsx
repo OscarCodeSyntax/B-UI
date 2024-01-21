@@ -1,18 +1,21 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8080/apiController",
+  baseURL: "http://localhost:8080/api/general",
   headers: {
     "Content-type": "application/json",
-    "Access-Control-Allow-Origin": "http://localhost:3000",
+    "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers":
-      "Origin, X-Requested-With, Content-Type, Accept",
+      "Origin, X-Requested-With, Content-Type, Accept, Set-Cookie",
   },
+   withCredentials: true,
+  
 });
 
 const findAll = async () => {
   try {
-    const response = await apiClient.get<string[]>("/");
+    const response = await apiClient.get<string[]>(""
+  );
     return response.data;
   } catch (error) {
     console.error("findAll call failed" + error);
@@ -30,7 +33,7 @@ const findById = async (id: number) => {
 
 const create = async (resource: string) => {
   try {
-    const response = await apiClient.post<any>("/", resource);
+    const response = await apiClient.post<any>("", resource);
     return response.data;
   } catch (error) {
     console.error("create call failed" + error);

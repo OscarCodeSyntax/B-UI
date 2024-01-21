@@ -1,8 +1,10 @@
-import React, { useState } from "react";
 import "./../../App.css";
 import { FormControl, FormLabel, TextField } from "@mui/material";
 import { SignInUserType } from "../../Resources/Types/UserLoginTypes";
 import UserLoginQueries from "../../Resources/DataService/UserLoginQueries";
+import Cookies from 'js-cookie'
+import React, { useState } from "react";
+import ApiButtons from "../ApiButtons/ApiButtons";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -61,6 +63,7 @@ function LoginForm() {
           />
         </FormControl>
       </form>
+      <ApiButtons />
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import React from "react";
-import { useRouteError } from "react-router-dom";
 
 export default function RouterError() {
-  const error : any = useRouteError();
+  const error : any = RouterError();
   console.error(error);
 
   return (
