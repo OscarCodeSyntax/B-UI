@@ -28,6 +28,7 @@ function LoginForm() {
     // store the user in localStorage
     localStorage.setItem("username", response.username);
     localStorage.setItem("id", response.id);
+    console.log(document.cookie);
     console.log(response.id);
     console.log(response.username);
     console.log(response.headers);
