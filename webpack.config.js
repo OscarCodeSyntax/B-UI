@@ -11,6 +11,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
         exclude: /node_modules/,
@@ -24,7 +25,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: '/'
+    publicPath: "/",
   },
   devServer: {
     historyApiFallback: true,

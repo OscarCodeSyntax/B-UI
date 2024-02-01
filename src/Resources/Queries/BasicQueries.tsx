@@ -1,12 +1,14 @@
 import axios from "axios";
 
+
 const apiClient = axios.create({
   baseURL: "http://localhost:8080/api/general",
   headers: {
     "Content-type": "application/json",
     "Access-Control-Allow-Headers":
-      "Origin, X-Requested-With, Content-Type, Accept"  },
-   withCredentials: true
+      "Origin, X-Requested-With, Content-Type, Accept",
+  },
+  withCredentials: true,
 });
 
 const findAll = async () => {
