@@ -1,12 +1,16 @@
 import "./App.css";
 import { RouterProvider } from "react-router-dom";
-import Router from "./Routes/Router";
 import React from "react";
+import Banner from "./Components/Banner/Banner";
+import RouterController from "./Routes/Router";
 
 const App = () => {
+
+
   return (
     <React.StrictMode>
-    <RouterProvider router={Router} />
+        <Banner />
+        <RouterProvider router={RouterController} />
     </React.StrictMode>
   );
 };

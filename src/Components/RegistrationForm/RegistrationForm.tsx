@@ -1,9 +1,9 @@
 import FormControl from "@mui/material/FormControl";
 import React, { useState } from "react";
 import "../../App.css";
-import { FormLabel, TextField } from "@mui/material";
+import { FormLabel, Link, TextField } from "@mui/material";
 import { SignUpUserType } from "../../Resources/Types/UserLoginTypes";
-import UserLoginQueries from "../../Resources/DataService/UserLoginQueries";
+import UserLoginQueries from "../../Resources/Queries/UserLoginQueries";
 
 const RegistrationForm = () => {
   const [username, setUsername] = useState("");
@@ -37,9 +37,9 @@ const RegistrationForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Registration</h1>
+      <h2>Registration</h2>
       <FormControl>
-        <FormLabel>User Name</FormLabel>
+        <FormLabel>Username</FormLabel>
         <TextField
           type="username"
           color="secondary"
@@ -64,15 +64,19 @@ const RegistrationForm = () => {
           name="password"
           value={password}
         />
-      <br></br>
+        <br></br>
         <TextField
           type={"submit"}
+          label={"Submit button"}
           defaultValue="Outlined"
           color="secondary"
           value="submit"
           name="submit"
           disabled={!validateForm()}
         />
+        <Link href="/" variant="body2" className="padding-10 text-center">
+          Login page
+        </Link>
       </FormControl>
     </form>
   );

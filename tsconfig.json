@@ -3,13 +3,13 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "es6",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "types": ["mocha", "jest"],
-    "lib": ["es2022", "dom"]
-  }
+    "lib": ["es2022", "dom"],
+  },
 }

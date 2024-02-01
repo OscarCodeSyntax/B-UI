@@ -1,6 +1,7 @@
 import axios from "axios";
 import { SignInUserType, SignUpUserType } from "../Types/UserLoginTypes";
 
+
 const apiClient = axios.create({
   baseURL: "http://localhost:8080/api",
   headers: {
@@ -8,7 +9,7 @@ const apiClient = axios.create({
     "Access-Control-Allow-Headers":
       "Origin, X-Requested-With, Content-Type, Accept, Set-Cookie",
   },
-  withCredentials: true
+  withCredentials: true,
 });
 
 const signUpUser = async (signUpUserInfo: SignUpUserType) => {
@@ -17,6 +18,7 @@ const signUpUser = async (signUpUserInfo: SignUpUserType) => {
       "/auth/signup",
       JSON.stringify(signUpUserInfo),
     );
+
     return response.data;
   } catch (error) {
     console.log(JSON.stringify(signUpUserInfo));
@@ -25,11 +27,13 @@ const signUpUser = async (signUpUserInfo: SignUpUserType) => {
 };
 
 const signInUser = async (signInUserInfo: SignInUserType) => {
+
   try {
     const response = await apiClient.post<any>(
       "/auth/signin",
       JSON.stringify(signInUserInfo),
     );
+
     return response.data;
   } catch (error) {
     console.error("signInUser call failed" + error);

@@ -1,10 +1,9 @@
 import "./../../App.css";
-import { FormControl, FormLabel, TextField } from "@mui/material";
+import { FormControl, FormLabel, Link, TextField } from "@mui/material";
 import { SignInUserType } from "../../Resources/Types/UserLoginTypes";
-import UserLoginQueries from "../../Resources/DataService/UserLoginQueries";
-import Cookies from 'js-cookie'
-import React, { useState } from "react";
-import ApiButtons from "../ApiButtons/ApiButtons";
+import UserLoginQueries from "../../Resources/Queries/UserLoginQueries";
+import { useState } from "react";
+import React from "react";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -24,21 +23,19 @@ function LoginForm() {
     };
     // send the username and password to the API
     const response = await UserLoginQueries.signInUser(loginInformation);
-
     // store the user in localStorage
     localStorage.setItem("username", response.username);
     localStorage.setItem("id", response.id);
-    console.log(document.cookie);
-    console.log(response.id);
-    console.log(response.username);
-    console.log(response.headers);
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("roles", response.roles);
+    window.location.reload()
   }
 
   return (
-    <div className="padding-20">
-      <h1>Login</h1>
+    <>
+      <h2>Login</h2>
       <form className="App" onSubmit={handleSubmit}>
-        <FormControl className="padding-10">
+        <FormControl>
           <FormLabel>Username</FormLabel>
           <TextField
             type="username"
@@ -55,17 +52,22 @@ function LoginForm() {
           />
           <br></br>
           <TextField
+            aria-label="Submit button"
             type={"submit"}
             defaultValue="Outlined"
             color="secondary"
-            value="submit"
-            name="submit"
             disabled={!validateForm()}
           />
+          <Link
+            href="/register"
+            variant="body2"
+            className="padding-10 text-center"
+          >
+            Click to register
+          </Link>
         </FormControl>
       </form>
-      <ApiButtons />
-    </div>
+    </>
   );
 }
 

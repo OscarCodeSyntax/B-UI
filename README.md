@@ -79,13 +79,11 @@ https://blog.logrocket.com/react-router-v6-guide/
 https://reactrouter.com/en/main/start/tutorial
 
 
-**Global State** - will use ReactContext due to how small our application is :
+**Auth handling**
+https://dev.to/dayvster/use-react-context-for-auth-288g
 
-https://dev.to/gabrieldneto/react-authentication-with-context-api-and-react-router-v6-typescript-4kn8
+https://medium.com/@katherinewest285/user-authentication-made-easy-usecontext-cc79b5a3ce82
 
 
 
-https://dev.to/sanjayttg/jwt-authentication-in-react-with-react-router-1d03  --- brush up on this
 
-**Cookie handling**
-https://www.npmjs.com/package/js-cookie
