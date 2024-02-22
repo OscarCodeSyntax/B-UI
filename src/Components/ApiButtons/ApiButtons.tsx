@@ -6,7 +6,6 @@ import Button from "@mui/material/Button";
 import "./../../App.css";
 
 const ApiButtons = () => {
-
   const [screenValue, setScreenValue] = useState<string>("Null");
 
   const deleteOnClick = async () => {

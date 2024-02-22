@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginForm   renders correctly 1`] = `
-<div
-  className="padding-20"
->
-  <h1>
+[
+  <h2>
     Login
-  </h1>
+  </h2>,
   <form
     className="App"
     onSubmit={[Function]}
   >
     <div
-      className="MuiFormControl-root padding-10 css-1nrlq1o-MuiFormControl-root"
+      className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
     >
       <label
         className="MuiFormLabel-root MuiFormLabel-colorPrimary css-u4tvz2-MuiFormLabel-root"
@@ -102,16 +100,9 @@ exports[`LoginForm   renders correctly 1`] = `
       </div>
       <br />
       <div
+        aria-label="Submit button"
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
       >
-        <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorSecondary Mui-disabled MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-179z3gj-MuiFormLabel-root-MuiInputLabel-root"
-          data-shrink={true}
-          htmlFor=":r2:"
-          id=":r2:-label"
-        >
-          Submit button
-        </label>
         <div
           className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorSecondary Mui-disabled MuiInputBase-formControl css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
@@ -123,7 +114,6 @@ exports[`LoginForm   renders correctly 1`] = `
             defaultValue="Outlined"
             disabled={true}
             id=":r2:"
-            name="submit"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -136,16 +126,26 @@ exports[`LoginForm   renders correctly 1`] = `
             className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-14lo706"
+              className="css-ihdtdm"
             >
-              <span>
-                Submit button
+              <span
+                className="notranslate"
+              >
+                ​
               </span>
             </legend>
           </fieldset>
         </div>
       </div>
+      <a
+        className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineAlways padding-10 text-center css-101ca9i-MuiTypography-root-MuiLink-root"
+        href="/register"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Click to register
+      </a>
     </div>
-  </form>
-</div>
+  </form>,
+]
 `;

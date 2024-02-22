@@ -4,9 +4,9 @@ exports[`LoginForm   renders correctly 1`] = `
 <form
   onSubmit={[Function]}
 >
-  <h1>
+  <h2>
     Registration
-  </h1>
+  </h2>
   <div
     className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
   >
@@ -112,7 +112,6 @@ exports[`LoginForm   renders correctly 1`] = `
           aria-invalid={false}
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-          defaultValue="Outlined"
           disabled={false}
           id=":r2:"
           name="password"
@@ -160,7 +159,6 @@ exports[`LoginForm   renders correctly 1`] = `
           aria-invalid={false}
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-          defaultValue="Outlined"
           disabled={true}
           id=":r3:"
           name="submit"
@@ -186,6 +184,14 @@ exports[`LoginForm   renders correctly 1`] = `
         </fieldset>
       </div>
     </div>
+    <a
+      className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineAlways padding-10 text-center css-101ca9i-MuiTypography-root-MuiLink-root"
+      href="/"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      Login page
+    </a>
   </div>
 </form>
 `;

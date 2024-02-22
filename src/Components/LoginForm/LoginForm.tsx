@@ -28,7 +28,7 @@ function LoginForm() {
     localStorage.setItem("id", response.id);
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("roles", response.roles);
-    window.location.reload()
+    window.location.reload();
   }
 
   return (

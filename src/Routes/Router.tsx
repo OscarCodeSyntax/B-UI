@@ -12,15 +12,10 @@ const isLoggedIn = localStorage.getItem("isLoggedIn");
 console.log("User is logged in : " + isLoggedIn);
 let isLoggedInBoolean = isLoggedInConverter(isLoggedIn);
 
-
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div className="padding-20">
-        {LandingPage(isLoggedInBoolean)}
-      </div>
-    ),
+    element: <div className="padding-20">{LandingPage(isLoggedInBoolean)}</div>,
     errorElement: <RouterError />,
   },
   {
@@ -46,7 +41,7 @@ const Router = createBrowserRouter([
     element: (
       <div className="padding-20">
         <h2>This page does not exist</h2>{" "}
-        <Link href="/" variant="body2" >
+        <Link href="/" variant="body2">
           Return to Home Page
         </Link>
       </div>

@@ -58,7 +58,6 @@ const RegistrationForm = () => {
         <FormLabel>Password</FormLabel>
         <TextField
           type="password"
-          defaultValue="Outlined"
           color="secondary"
           onChange={(e) => setPassword(e.target.value)}
           name="password"
@@ -68,7 +67,6 @@ const RegistrationForm = () => {
         <TextField
           type={"submit"}
           label={"Submit button"}
-          defaultValue="Outlined"
           color="secondary"
           value="submit"
           name="submit"
