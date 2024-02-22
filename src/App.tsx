@@ -5,12 +5,10 @@ import Banner from "./Components/Banner/Banner";
 import RouterController from "./Routes/Router";
 
 const App = () => {
-
-
   return (
     <React.StrictMode>
-        <Banner />
-        <RouterProvider router={RouterController} />
+      <Banner />
+      <RouterProvider router={RouterController} />
     </React.StrictMode>
   );
 };

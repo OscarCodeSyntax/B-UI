@@ -16,7 +16,7 @@ describe("LoginForm  ", () => {
 
     expect(testInstance.findAllByType("input").length).toEqual(4);
     expect(testInstance.findAllByType("label").length).toEqual(4);
-    expect(testInstance.findAllByType("h1").length).toEqual(1);
+    expect(testInstance.findAllByType("h2").length).toEqual(1);
   });
 
   it("has all the correct text", () => {

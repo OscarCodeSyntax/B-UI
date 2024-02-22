@@ -1,13 +1,9 @@
+function isLoggedInConverter(isLoggedIn: string) {
+  if (isLoggedIn === "true") {
+    return true;
+  }
 
-
-function isLoggedInConverter (isLoggedIn : string) {
-
-    if(isLoggedIn === "true") {
-        return true;
-    }
-
-    return false;
-
+  return false;
 }
 
 export default isLoggedInConverter;

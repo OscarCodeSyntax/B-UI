@@ -1,7 +1,6 @@
 import axios from "axios";
 import { SignInUserType, SignUpUserType } from "../Types/UserLoginTypes";
 
-
 const apiClient = axios.create({
   baseURL: "http://localhost:8080/api",
   headers: {
@@ -27,7 +26,6 @@ const signUpUser = async (signUpUserInfo: SignUpUserType) => {
 };
 
 const signInUser = async (signInUserInfo: SignInUserType) => {
-
   try {
     const response = await apiClient.post<any>(
       "/auth/signin",
@@ -49,8 +47,8 @@ const logout = async () => {
   }
 };
 
-const deleteUser = async (signInUserInfo: SignInUserType) => {
-  const usernameEndpoint: string = "/admin/" + signInUserInfo.username;
+const deleteUser = async (username: string) => {
+  const usernameEndpoint: string = "/admin/" + username;
   try {
     const response = await apiClient.delete<any>(usernameEndpoint);
     return response.data;
